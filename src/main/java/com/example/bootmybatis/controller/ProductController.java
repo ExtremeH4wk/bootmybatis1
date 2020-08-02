@@ -3,6 +3,7 @@ package com.example.bootmybatis.controller;
 
 import com.example.bootmybatis.entity.product;
 import com.example.bootmybatis.server.ProductService;
+import com.example.bootmybatis.util.ResultMap;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,9 +24,9 @@ public class ProductController {
 
     @RequestMapping(value="/getAll", method= RequestMethod.GET)
     @ResponseBody
-    public List<product> getAll(){
-
-        return service.getAllProduct();
+    public ResultMap getAll(){
+        List<product>getAllProduct=service.getAllProduct();
+        return ResultMap.success(getAllProduct);
     }
 
 }

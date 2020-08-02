@@ -4,6 +4,7 @@ package com.example.bootmybatis.controller;
 import com.example.bootmybatis.entity.type;
 
 import com.example.bootmybatis.server.TypeService;
+import com.example.bootmybatis.util.ResultMap;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,9 +26,9 @@ public class TypeController {
 
     @RequestMapping(value="/getAll", method= RequestMethod.GET)
     @ResponseBody
-    public List<type> getAll(){
-
-        return service.getAllType();
+    public ResultMap getAll(){
+        List<type>getAllType=service.getAllType();
+        return ResultMap.success(getAllType);
     }
 
 }
