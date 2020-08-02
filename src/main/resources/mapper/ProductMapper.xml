@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 你要用配置文件去写对应的接口, 那么你这个配置文件就要声明清楚对应的是哪个接口
+    mapper标签的namespace这个属性上写上对应的接口
+-->
+<mapper namespace="com.example.bootmybatis.dao.productDao">
+    <!-- 我们可以通过封装结果集来完成对数据库和属性字段的映射关系-->
+    <!-- id 当前这个结果集的唯一标识
+         type: 我要映射的是哪个对象的属性(写这个对象所在的全路径)
+         可以重复利用
+    -->
+    <resultMap id="productMap" type="com.example.bootmybatis.entity.product">
+        <!-- 主键的映射 id标签 不是主键都用result标签-->
+        <!--property=""  写的是对象中的属性名  column="" 数据库中的字段 -->
+        <id property="id" column="p_id"></id>
+        <result property="title" column="p_name"></result>
+        <result property="img" column="pic_data"/>
+        <result property="text" column="p_text"/>
+        <result property="classid" column="p_typeId"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+
+    <!--查询全部-->
+    <!-- 如果你的返回值是一个集合的话, 那么你只需要做一件事情, 就是返回值类型设置成对应的泛型所在路径就可以了-->
+    <!-- 如果出现了 实体类的对象属性名和数据库中的字段名不匹配的时候 要怎么处理-->
+    <select id="getAll" resultType="com.example.bootmybatis.entity.product">
+        select
+        p_id as id,
+        p_name as title,
+        pic_data as img,
+        p_text as text,
+        p_typeId as classid,
+        price as price
+        from product
+    </select>
+
+<!--    &lt;!&ndash; 查询某个商品&ndash;&gt;-->
+<!--    &lt;!&ndash; 在mybatis中 占位符就是#{这里面的内容 你就跟着你的参数名走就行了}-->
+<!--        如果多参数的话 就建议大家直接传一个实体类-->
+<!--        想要使用结果集映射, 那么你的结果属性不要写resultType-->
+<!--        要改成resultMap = "对应结果集的id"-->
+<!--    &ndash;&gt;-->
+<!--    <select id="getById" parameterType="java.lang.Integer" resultMap="productMap">-->
+<!--        select  * from  t_product where product_id=#{productId}-->
+<!--    </select>-->
+<!--    &lt;!&ndash; 删除要使用指定的标签&ndash;&gt;-->
+<!--    &lt;!&ndash; delete from 哪张表 where(条件)  &ndash;&gt;-->
+<!--    <delete id="deleteProduct" parameterType="java.lang.Integer">-->
+<!--        delete from t_product where product_id = #{productId}-->
+<!--    </delete>-->
+<!--    &lt;!&ndash; 更新语句&ndash;&gt;-->
+<!--    &lt;!&ndash; update 哪张表 set 字段=value,...,  where(根据什么来更新, 主键)&ndash;&gt;-->
+<!--    <update id="updateProduct" parameterType="com.example.curddemo.entity.Product">-->
+<!--        update t_product set-->
+<!--        product_name=#{productName},-->
+<!--        product_price=#{productPrice},-->
+<!--        product_desc=#{productDesc},-->
+<!--        product_img=#{productImg}-->
+<!--        where product_id=#{productId}-->
+
+<!--    </update>-->
+
+<!--    &lt;!&ndash; 插入语句&ndash;&gt;-->
+<!--    &lt;!&ndash; insert into 哪张表(哪些字段,..,..) values()  值要和前面的字段对应&ndash;&gt;-->
+<!--    <insert id="addProduct" parameterType="com.example.curddemo.entity.Product">-->
+<!--        insert into t_product(product_id,product_name,product_price,product_desc,product_img,product_date)-->
+<!--        values (#{productId},#{productName},#{productPrice},#{productDesc},#{productImg},#{productDate})-->
+<!--    </insert>-->
+</mapper>
