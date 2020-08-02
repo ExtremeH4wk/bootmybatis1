@@ -1,5 +1,5 @@
 package com.example.bootmybatis.util;
-
+//接口格式封装
 public class ResultMap {
     // 在企业中前台所需要的信息 通常 常见的有这么几个
     private Integer code; //状态码  成功0,200  失败 400 500..
