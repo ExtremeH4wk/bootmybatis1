@@ -1,6 +1,4 @@
 package com.example.bootmybatis.controller;
-
-
 import com.example.bootmybatis.entity.product;
 import com.example.bootmybatis.server.ProductService;
 import com.example.bootmybatis.util.ResultMap;
@@ -19,13 +17,16 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductService service;
+
 //    @ApiOperation(value="这是获取所有用户",notes="用户信息")
 //    @ApiImplicitParam(name = "username",value = "用户名",dataType = "String")
 
     @RequestMapping(value="/getAll", method= RequestMethod.GET)
     @ResponseBody
     public ResultMap getAll(){
+
         List<product>getAllProduct=service.getAllProduct();
+
         return ResultMap.success(getAllProduct);
     }
 

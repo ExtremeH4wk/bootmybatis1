@@ -2,7 +2,7 @@ package com.example.bootmybatis.dao;
 
 import com.example.bootmybatis.entity.type;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+//import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper

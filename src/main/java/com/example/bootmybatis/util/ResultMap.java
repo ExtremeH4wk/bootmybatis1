@@ -14,8 +14,6 @@ public class ResultMap {
         this.data = data;
     }
 
-    public ResultMap() {
-    }
 
     public Integer getCode() {
         return code;
