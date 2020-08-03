@@ -23,11 +23,16 @@ public class ProductController {
 
     @RequestMapping(value="/getAll", method= RequestMethod.GET)
     @ResponseBody
-    public ResultMap getAll(){
+    public ResultMap getAllProduct(){
 
         List<product>getAllProduct=service.getAllProduct();
 
         return ResultMap.success(getAllProduct);
+    }
+    @GetMapping(value="/get/{productId}")
+    @ResponseBody
+    public ResultMap getByProductId(@PathVariable Integer productId) {
+        return ResultMap.success(service.getById(productId));
     }
 
 }

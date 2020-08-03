@@ -21,7 +21,8 @@ public interface productDao {
 //            "        pic_data3 as img3,\n" +
 //            "        deBut as text2\n" +
 //            "        from product")
-    List<product> getAllProduct();
+    List<product> getAll();
+    product getById(int productId);
 }
 
 

@@ -16,6 +16,10 @@ public class ProductService {
 
     public List<product> getAllProduct(){
 
-        return productDao.getAllProduct();
+        return productDao.getAll();
+    }
+    //查询某个商品 (一条记录)->一个实体类
+    public product getById(int productId) {
+        return productDao.getById(productId);
     }
 }

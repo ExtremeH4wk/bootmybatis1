@@ -30,7 +30,7 @@
     <!--查询全部-->
     <!-- 如果你的返回值是一个集合的话, 那么你只需要做一件事情, 就是返回值类型设置成对应的泛型所在路径就可以了-->
     <!-- 如果出现了 实体类的对象属性名和数据库中的字段名不匹配的时候 要怎么处理-->
-    <select id="getAllProduct" resultType="com.example.bootmybatis.entity.product">
+    <select id="getAll" resultType="com.example.bootmybatis.entity.product">
         select
         p_id as id,
         p_name as title,
@@ -45,15 +45,17 @@
         from product
     </select>
 
-<!--    &lt;!&ndash; 查询某个商品&ndash;&gt;-->
-<!--    &lt;!&ndash; 在mybatis中 占位符就是#{这里面的内容 你就跟着你的参数名走就行了}-->
-<!--        如果多参数的话 就建议大家直接传一个实体类-->
-<!--        想要使用结果集映射, 那么你的结果属性不要写resultType-->
-<!--        要改成resultMap = "对应结果集的id"-->
-<!--    &ndash;&gt;-->
-<!--    <select id="getById" parameterType="java.lang.Integer" resultMap="productMap">-->
-<!--        select  * from  t_product where product_id=#{productId}-->
-<!--    </select>-->
+    <!-- 查询某个商品-->
+    <!-- 在mybatis中 占位符就是#{这里面的内容 你就跟着你的参数名走就行了}
+        如果多参数的话 就建议大家直接传一个实体类
+        想要使用结果集映射, 那么你的结果属性不要写resultType
+        要改成resultMap = "对应结果集的id"
+    -->
+    <select id="getById" parameterType="java.lang.Integer" resultMap="productMap">
+        select
+        *
+        from  product where p_id=#{productId}
+    </select>
 <!--    &lt;!&ndash; 删除要使用指定的标签&ndash;&gt;-->
 <!--    &lt;!&ndash; delete from 哪张表 where(条件)  &ndash;&gt;-->
 <!--    <delete id="deleteProduct" parameterType="java.lang.Integer">-->
