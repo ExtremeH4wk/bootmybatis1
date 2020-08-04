@@ -14,7 +14,7 @@ public class product {
     private int sales;
     private String text2;
     private int num;
-    private int tick;
+    private String tick;
 
     public int getId() {
         return id;
@@ -113,11 +113,11 @@ public class product {
     }
 
 
-    public int getTick() {
+    public String getTick() {
         return tick;
     }
 
-    public void setTick(int tick) {
+    public void setTick(String tick) {
         this.tick = tick;
     }
 
