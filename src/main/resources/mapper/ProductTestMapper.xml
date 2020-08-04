@@ -75,8 +75,8 @@
 
 <!--    </update>-->
 
-<!--    &lt;!&ndash; 插入语句&ndash;&gt;-->
-<!--    &lt;!&ndash; insert into 哪张表(哪些字段,..,..) values()  值要和前面的字段对应&ndash;&gt;-->
+    <!-- 插入语句-->
+    <!-- insert into 哪张表(哪些字段,..,..) values()  值要和前面的字段对应-->
 <!--    <insert id="addProduct" parameterType="com.example.curddemo.entity.Product">-->
 <!--        insert into t_product(product_id,product_name,product_price,product_desc,product_img,product_date)-->
 <!--        values (#{productId},#{productName},#{productPrice},#{productDesc},#{productImg},#{productDate})-->
