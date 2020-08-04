@@ -1,8 +1,5 @@
 package com.example.bootmybatis.entity;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 public class product {
     private int id;
@@ -17,6 +14,7 @@ public class product {
     private int sales;
     private String text2;
     private int num;
+    private int tick;
 
     public int getId() {
         return id;
@@ -114,6 +112,15 @@ public class product {
         this.num = num;
     }
 
+
+    public int getTick() {
+        return tick;
+    }
+
+    public void setTick(int tick) {
+        this.tick = tick;
+    }
+
     @Override
     public String toString() {
         return "product{" +
@@ -129,6 +136,7 @@ public class product {
                 ", sales=" + sales +
                 ", text2='" + text2 + '\'' +
                 ", num=" + num +
+                ", tick=" + tick +
                 '}';
     }
 }

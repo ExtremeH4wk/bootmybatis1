@@ -24,9 +24,7 @@ public class ProductController {
     @RequestMapping(value="/getAll", method= RequestMethod.GET)
     @ResponseBody
     public ResultMap getAllProduct(){
-
         List<product>getAllProduct=service.getAllProduct();
-
         return ResultMap.success(getAllProduct);
     }
     @GetMapping(value="/get/{productId}")
