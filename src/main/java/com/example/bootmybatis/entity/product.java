@@ -14,6 +14,7 @@ public class product {
     private String img2;
     private String img3;
     private int classid;
+    private int sales;
 
     private String text2;
 
@@ -97,6 +98,14 @@ public class product {
         this.text2 = text2;
     }
 
+    public int getSales() {
+        return sales;
+    }
+
+    public void setSales(int sales) {
+        this.sales = sales;
+    }
+
     @Override
     public String toString() {
         return "product{" +
@@ -109,6 +118,7 @@ public class product {
                 ", img2='" + img2 + '\'' +
                 ", img3='" + img3 + '\'' +
                 ", classid=" + classid +
+                ", sales=" + sales +
                 ", text2='" + text2 + '\'' +
                 '}';
     }

@@ -24,6 +24,7 @@
         <result property="img2" column="pic_data2"/>
         <result property="img3" column="pic_data3"/>
         <result property="text2" column="deBut"/>
+        <result property="sales" column="sales"/>
     </resultMap>
 
 
@@ -41,7 +42,8 @@
         pic_data1 as img1,
         pic_data2 as img2,
         pic_data3 as img3,
-        deBut as text2
+        deBut as text2,
+        sales
         from product
     </select>
 
