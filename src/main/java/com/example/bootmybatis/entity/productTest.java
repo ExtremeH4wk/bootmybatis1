@@ -11,8 +11,9 @@ public class productTest {
     private String img3;
     private int classid;
     private int sales;
-
     private String text2;
+    private int num;
+    private String tick;
 
     public int getId() {
         return id;
@@ -102,9 +103,25 @@ public class productTest {
         this.sales = sales;
     }
 
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getTick() {
+        return tick;
+    }
+
+    public void setTick(String tick) {
+        this.tick = tick;
+    }
+
     @Override
     public String toString() {
-        return "product_test{" +
+        return "productTest{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", img='" + img + '\'' +
@@ -116,6 +133,8 @@ public class productTest {
                 ", classid=" + classid +
                 ", sales=" + sales +
                 ", text2='" + text2 + '\'' +
+                ", num=" + num +
+                ", tick='" + tick + '\'' +
                 '}';
     }
 }

@@ -22,4 +22,5 @@ public class ProductService {
     public product getById(int productId) {
         return productDao.getById(productId);
     }
+
 }

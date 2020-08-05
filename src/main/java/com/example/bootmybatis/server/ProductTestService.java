@@ -27,4 +27,11 @@ public class ProductTestService {
     public void addProduct(productTest product) {
         productTestDao.addProduct(product);
     }
+    //更新商品
+    public void updateProduct(productTest product) {
+        productTestDao.updateProduct(product);
+    }
+    public void deleteProduct(int productId) {
+        productTestDao.deleteProduct(productId);
+    }
 }

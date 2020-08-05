@@ -62,27 +62,34 @@
         *
         from  product_test where p_id=#{productId}
     </select>
-<!--    &lt;!&ndash; 删除要使用指定的标签&ndash;&gt;-->
-<!--    &lt;!&ndash; delete from 哪张表 where(条件)  &ndash;&gt;-->
-<!--    <delete id="deleteProduct" parameterType="java.lang.Integer">-->
-<!--        delete from t_product where product_id = #{productId}-->
-<!--    </delete>-->
-<!--    &lt;!&ndash; 更新语句&ndash;&gt;-->
-<!--    &lt;!&ndash; update 哪张表 set 字段=value,...,  where(根据什么来更新, 主键)&ndash;&gt;-->
-<!--    <update id="updateProduct" parameterType="com.example.curddemo.entity.Product">-->
-<!--        update t_product set-->
-<!--        product_name=#{productName},-->
-<!--        product_price=#{productPrice},-->
-<!--        product_desc=#{productDesc},-->
-<!--        product_img=#{productImg}-->
-<!--        where product_id=#{productId}-->
+    <!-- 删除要使用指定的标签-->
+    <!-- delete from 哪张表 where(条件)  -->
+    <delete id="deleteProduct" parameterType="java.lang.Integer">
+        delete from product_test where p_id = #{id}
+    </delete>
 
-<!--    </update>-->
-
+    <!-- 更新语句-->
+    <!-- update 哪张表 set 字段=value,...,  where(根据什么来更新, 主键)-->
+    <update id="updateProduct" parameterType="com.example.bootmybatis.entity.productTest">
+        update product_test set
+        p_name=#{title},
+        pic_data=#{img},
+        p_text=#{text},
+        price=#{price},
+        pic_data1=#{img1},
+        pic_data2=#{img2},
+        pic_data3=#{img3},
+        p_typeId=#{classid},
+        sales=#{sales},
+        deBut=#{text2},
+        num=#{num},
+        tick=#{tick}
+        where p_id=#{id}
+    </update>
     <!-- 插入语句-->
     <!-- insert into 哪张表(哪些字段,..,..) values()  值要和前面的字段对应-->
     <insert id="addProduct" parameterType="com.example.bootmybatis.entity.productTest">
-        insert into productTest(p_id,p_name,pic_data,p_text,p_typeId,price,pic_data1,pic_data2,pic_data3,deBut,sales,num,tick)
+        insert into product_test(p_id,p_name,pic_data,p_text,price,pic_data1,pic_data2,pic_data3,p_typeId,sales,deBut,num,tick)
         values (#{id},#{title},#{img},#{text},#{price},#{img1},#{img2},#{img3},#{classid},#{sales},#{text2},#{num},#{tick})
     </insert>
 </mapper>

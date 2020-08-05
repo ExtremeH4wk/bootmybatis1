@@ -44,4 +44,16 @@ public class ProductTestController {
         service.addProduct(product);
         return ResultMap.success(null);
     }
+    @PostMapping("/update")
+    @ResponseBody
+    public ResultMap updateProduct(@RequestBody productTest product) {
+        service.updateProduct(product);
+        return ResultMap.success(null);
+    }
+    @GetMapping("/delete/{productId}")
+    @ResponseBody
+    public ResultMap deleteProduct(@PathVariable int productId) {
+        service.deleteProduct(productId);
+        return ResultMap.success(null);
+    }
 }

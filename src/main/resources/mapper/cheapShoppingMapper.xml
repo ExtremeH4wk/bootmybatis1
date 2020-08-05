@@ -25,14 +25,15 @@
     <!-- 如果你的返回值是一个集合的话, 那么你只需要做一件事情, 就是返回值类型设置成对应的泛型所在路径就可以了-->
     <!-- 如果出现了 实体类的对象属性名和数据库中的字段名不匹配的时候 要怎么处理-->
     <select id="getALLCheap" resultType="com.example.bootmybatis.entity.cheapShopping">
-    select
-        p_id as id,
-        p_name as title,
-        pic_data as img,
-        price as price
-        from product,cheapshopping
-        WHERE product.p_name=cheapshopping.name
-        ORDER BY cheapshopping.id
+--   select
+--         p_id as id,
+--         p_name as title,
+--         pic_data as img,
+--         price as price
+--         from product,cheapshopping
+--         WHERE product.p_name=cheapshopping.name
+--         ORDER BY cheapshopping.id
+    SELECT * FROM cheapshopping_copy
     </select>
 
     <!-- 查询某个商品-->
