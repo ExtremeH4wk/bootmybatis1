@@ -34,5 +34,14 @@ public class ProductTestController {
     public ResultMap getByProductId(@PathVariable Integer productId) {
         return ResultMap.success(service.getById(productId));
     }
-
+    /**
+     * 大家可以使用之前的那种封装请求方式, 不用restful风格
+     * restful风格可以接收的是json参数(@RequestBody),不是像之前那样的 字符串参数
+     */
+    @PostMapping("/insert")
+    @ResponseBody
+    public ResultMap insertProduct(@RequestBody productTest product) {
+        service.addProduct(product);
+        return ResultMap.success(null);
+    }
 }

@@ -20,6 +20,8 @@ public interface productTestDao {
 //            "        from product")
     List<productTest> getAll();
     productTest getById(int productId);
+    //添加商品
+    void addProduct(productTest product);
 }
 
 

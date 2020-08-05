@@ -23,4 +23,8 @@ public class ProductTestService {
     public productTest getById(int productId) {
         return productTestDao.getById(productId);
     }
+    //添加商品
+    public void addProduct(productTest product) {
+        productTestDao.addProduct(product);
+    }
 }

@@ -25,6 +25,8 @@
         <result property="img3" column="pic_data3"/>
         <result property="text2" column="deBut"/>
         <result property="sales" column="sales"/>
+        <result property="num" column="num"/>
+        <result property="tick" column="tick"/>
     </resultMap>
 
 
@@ -43,7 +45,9 @@
         pic_data2 as img2,
         pic_data3 as img3,
         deBut as text2,
-        sales
+        sales,
+        num,
+        tick
         from product_test
     </select>
 
@@ -77,8 +81,8 @@
 
     <!-- 插入语句-->
     <!-- insert into 哪张表(哪些字段,..,..) values()  值要和前面的字段对应-->
-<!--    <insert id="addProduct" parameterType="com.example.curddemo.entity.Product">-->
-<!--        insert into t_product(product_id,product_name,product_price,product_desc,product_img,product_date)-->
-<!--        values (#{productId},#{productName},#{productPrice},#{productDesc},#{productImg},#{productDate})-->
-<!--    </insert>-->
+    <insert id="addProduct" parameterType="com.example.bootmybatis.entity.productTest">
+        insert into productTest(p_id,p_name,pic_data,p_text,p_typeId,price,pic_data1,pic_data2,pic_data3,deBut,sales,num,tick)
+        values (#{id},#{title},#{img},#{text},#{price},#{img1},#{img2},#{img3},#{classid},#{sales},#{text2},#{num},#{tick})
+    </insert>
 </mapper>
