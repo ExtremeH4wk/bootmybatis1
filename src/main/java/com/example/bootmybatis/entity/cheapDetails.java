@@ -1,12 +1,11 @@
 package com.example.bootmybatis.entity;
 
-public class cheapShopping {
+public class cheapDetails {
     private int id;
     private String title;
     private String img;
-    private String text;
     private String gif;
-    private int price;
+    private String text;
 
     public int getId() {
         return id;
@@ -32,12 +31,12 @@ public class cheapShopping {
         this.img = img;
     }
 
-    public int getPrice() {
-        return price;
+    public String getGif() {
+        return gif;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setGif(String gif) {
+        this.gif = gif;
     }
 
     public String getText() {
@@ -48,23 +47,14 @@ public class cheapShopping {
         this.text = text;
     }
 
-    public String getGif() {
-        return gif;
-    }
-
-    public void setGif(String gif) {
-        this.gif = gif;
-    }
-
     @Override
     public String toString() {
-        return "cheapShopping{" +
+        return "cheapDetails{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", img='" + img + '\'' +
-                ", text='" + text + '\'' +
                 ", gif='" + gif + '\'' +
-                ", price=" + price +
+                ", text='" + text + '\'' +
                 '}';
     }
 }
