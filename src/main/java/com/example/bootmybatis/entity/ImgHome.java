@@ -1,6 +1,6 @@
 package com.example.bootmybatis.entity;
 
-public class ImgSecond {
+public class ImgHome {
     private int id;
     private String img;
 
@@ -22,7 +22,7 @@ public class ImgSecond {
 
     @Override
     public String toString() {
-        return "ImgSecond{" +
+        return "ImgHome{" +
                 "id=" + id +
                 ", img='" + img + '\'' +
                 '}';
