@@ -1,9 +1,6 @@
 package com.example.bootmybatis.controller;
-
-
-import com.example.bootmybatis.entity.Type;
-
-import com.example.bootmybatis.server.TypeService;
+import com.example.bootmybatis.entity.ImgSecond;
+import com.example.bootmybatis.server.ImgSecondService;
 import com.example.bootmybatis.util.ResultMap;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
-@Api(value = "typeController",description = "这是关于商品分类的接口")
+@Api(value = "ImgSecondController",description = "这是关于第二个首页轮播图的接口")
 @Controller
-@RequestMapping("/type")
+@RequestMapping("/imgSecond")
 
-public class TypeController {
+public class ImgSecondController {
     @Autowired
-    TypeService service;
-    @ApiOperation(value="这是获取商品分类名",notes="商品分类名")
+    ImgSecondService service;
+    @ApiOperation(value="这是获取第二个首页轮播图",notes="第二个首页轮播图")
     @RequestMapping(value="/getAll", method= RequestMethod.GET)
     @ResponseBody
     public ResultMap getAll(){
-        List<Type>getAllType=service.getAllType();
-        return ResultMap.success(getAllType);
+        List<ImgSecond>getAllImgSecond=service.getAllImgSecond();
+        return ResultMap.success(getAllImgSecond);
     }
 
 }
